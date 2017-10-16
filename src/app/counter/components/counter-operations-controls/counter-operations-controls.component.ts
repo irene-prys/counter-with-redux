@@ -14,9 +14,9 @@ export class CounterOperationsControlsComponent implements OnInit, OnDestroy {
     сounterSubscription: Subscription;
     counterSettingsState: Observable<CounterSettings>;
 
-    counterStep = 1;
+    counterStep: number;
 
-    constructor(private counterService: CounterService, private store: Store<{ counterSettingsState: CounterSettings }>) {         
+    constructor(private counterService: CounterService, private store: Store<{ counterSettingsState: CounterSettings }>) {
         this.counterSettingsState = this.store.select('counterSettingsState');
     }
 

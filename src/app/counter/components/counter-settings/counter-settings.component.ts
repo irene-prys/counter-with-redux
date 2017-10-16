@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from "@angular/core";
+import { Component } from "@angular/core";
 
 import { CounterSettingsService } from "../../services/counter-settings.service";
 
@@ -9,7 +9,7 @@ import { CounterSettingsService } from "../../services/counter-settings.service"
 export class CounterSettingsComponent {
     stepValue = 1;
 
-    constructor(private counterSettingsService : CounterSettingsService ) {}
+    constructor(private counterSettingsService: CounterSettingsService) { }
 
     update(newValue: number) {
         this.counterSettingsService.updateStep(newValue);
