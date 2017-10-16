@@ -5,7 +5,7 @@ import * as CounterActions from '../store/counter.actions';
 
 @Injectable()
 export class CounterService {
-    constructor (private store: Store<{counterStateReducer: Counter}>) {}//Store<{counterStateReducer: Counter}> not sure what type should I use here (307: 3.21)
+    constructor (private store: Store<{counterState: number}>) {}
 
     add(amount: number) {
         this.store.dispatch(new CounterActions.CounterAddAction(amount));
