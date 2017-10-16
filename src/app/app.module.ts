@@ -5,11 +5,14 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
-import { CounterOperationsControlsComponent } from './counter/components/counter-operations-controls/counter-operations-sontrols.component';
+import { CounterOperationsControlsComponent } from './counter/components/counter-operations-controls/counter-operations-controls.component';
 import { CounterSettingsComponent } from './counter/components/counter-settings/counter-settings.component';
 
 import { CounterService } from './counter/services/counter.service';
+import { CounterSettingsService } from './counter/services/counter-settings.service';
+
 import { counterStateReducer } from './counter/store/counter.reducer';
+import { counterSettingsStateReducer } from './counter/store/counter-settings.reducer';
 
 @NgModule({
   declarations: [
@@ -21,9 +24,9 @@ import { counterStateReducer } from './counter/store/counter.reducer';
   imports: [
     BrowserModule,
     FormsModule,
-    StoreModule.forRoot({ counterState: counterStateReducer })
+    StoreModule.forRoot({ counterState: counterStateReducer, counterSettingsState: counterSettingsStateReducer })
   ],
-  providers: [CounterService],
+  providers: [CounterService, CounterSettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,15 +1,17 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core"
+import { Component, EventEmitter } from "@angular/core";
+
+import { CounterSettingsService } from "../../services/counter-settings.service";
 
 @Component({
     selector: "counter-settings",
     templateUrl: "./counter-settings.component.html"
 })
 export class CounterSettingsComponent {
-    @Input() stepValue: number;
-    @Output() stepValueChange = new EventEmitter<number>();
+    stepValue = 1;
+
+    constructor(private counterSettingsService : CounterSettingsService ) {}
 
     update(newValue: number) {
-        this.stepValue = newValue;
-        this.stepValueChange.emit(newValue);
+        this.counterSettingsService.updateStep(newValue);
     }
 }
