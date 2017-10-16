@@ -5,12 +5,12 @@ const initialState: Counter = { value: 0 };
 
 export function counterStateReducer(state = initialState, action: CounterActions.CounterActions) {// todo: think over the name
     switch (action.type) {
-        case CounterActions.COUNTER_INCREMENT:
+        case CounterActions.COUNTER_ADD:
             return {
                 ...state,
                 value: state.value + action.payload
             };
-        case CounterActions.COUNTER_DECREMENT:
+        case CounterActions.COUNTER_SUBTRACT:
             return {
                 ...state,
                 value: state.value - action.payload
